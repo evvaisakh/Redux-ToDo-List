@@ -14,7 +14,7 @@ function Home() {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (text.trim() === '') {
-            return toast.error('Please enter a todo')
+            return toast.warn('Please enter a todo')
         } else {
             dispatch(
                 addTodo({
@@ -29,7 +29,7 @@ function Home() {
     }
     const handleDelete = (id) => {
         dispatch(deleteTodo(id))
-        toast.warn('Todo deleted')
+        toast.error('Todo deleted')
     }
 
     const handleStatusUpdate = (id) => {
